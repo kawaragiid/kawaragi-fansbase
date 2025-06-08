@@ -1,36 +1,16 @@
 // app/berita/[slug]/page.js
-"use client";
+"use client"; // Tetap client component
 import Image from "next/image";
 import Link from "next/link";
-import { getNewsArticles, getArticleBySlug } from "../../lib/firebase/firestore"; // <--- JALUR DIPERBAIKI DI SINI
+// HAPUS IMPORT INI KARENA SEKARANG SUDAH ADA DI LAYOUT.JS:
+// import { getNewsArticles, getArticleBySlug } from '../../lib/firebase/firestore';
+import { getArticleBySlug } from "../../lib/firebase/firestore"; // <<< HANYA import yang dibutuhkan di client
 import { useAuth } from "../../lib/firebase/authContext";
+import { useEffect, useState } from "react"; // Pastikan ini diimport
 
-// Fungsi untuk menghasilkan metadata dinamis (berjalan di server)
-export async function generateMetadata({ params }) {
-  const article = await getArticleBySlug(params.slug);
-
-  if (!article) {
-    return {
-      title: "Artikel Tidak Ditemukan",
-      description: "Artikel berita yang Anda cari tidak ditemukan.",
-    };
-  }
-  return {
-    title: `${article.title} - Kawaragi Fansbase`,
-    description: article.excerpt,
-    openGraph: {
-      images: [article.imageUrl],
-    },
-  };
-}
-
-// Fungsi untuk menghasilkan parameter (slug) untuk pre-rendering (berjalan di server)
-export async function generateStaticParams() {
-  const articles = await getNewsArticles();
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
-}
+// HAPUS BAGIAN INI SELURUHNYA:
+// export async function generateMetadata({ params }) { ... }
+// export async function generateStaticParams() { ... }
 
 export default function ArticleDetailPage({ params }) {
   const { user, loading: authLoading, signInWithGoogle } = useAuth();
