@@ -86,7 +86,7 @@ export default function GaleriPage() {
         <h1 className="text-5xl font-bold text-center text-white mb-16 border-b-4 border-yellow-300 pb-4 inline-block animate-fade-in-up">Galeri Foto & Artwork</h1>
 
         <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-          Jelajahi koleksi gambar pilihan yang menampilkan momen terbaik dari Soya Kurokawa dan Hinata Hiiragi, termasuk foto di balik layar film "Monster" dan proyek lainnya.
+          Jelajahi koleksi gambar pilihan yang menampilkan momen terbaik dari Soya Kurokawa dan Hinata Hiiragi, termasuk foto di balik layar film &quot;Monster&quot; dan proyek lainnya. {/* <--- PERBAIKAN: &quot;Monster&quot; */}
         </p>
 
         {images.length === 0 ? ( // Tampilkan pesan jika tidak ada gambar
