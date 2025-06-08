@@ -1,13 +1,14 @@
 // app/donate/page.js
-"use client";
+"use client"; // Ini adalah Client Component
+
 import Link from "next/link";
 import Image from "next/image";
 
-export const metadata = {
-  // Metadata ini di Server Component, tapi page ini client, jadi bisa diabaikan
-  title: "Dukung Kami - Kawaragi Fansbase",
-  description: "Bantu kami mengembangkan Kawaragi Fansbase dan mendukung proyek-proyek terkait Soya Kurokawa & Hinata Hiiragi.",
-};
+// HAPUS ATAU KOMENTARI BAGIAN METADATA INI
+// export const metadata = {
+//   title: 'Dukung Kami - Kawaragi Fansbase',
+//   description: 'Bantu kami mengembangkan Kawaragi Fansbase dan mendukung proyek-proyek terkait Soya Kurokawa & Hinata Hiiragi.',
+// };
 
 export default function DonatePage() {
   return (
@@ -59,7 +60,7 @@ export default function DonatePage() {
           >
             <div className="text-7xl mb-6 flex justify-center text-yellow-300">☕</div> {/* Icon */}
             <h2 className="text-3xl font-bold text-white mb-4">Dukung Via Platform</h2>
-            <p className="text-gray-300 mb-6">Dukung kami dengan &quot;traktir&quot; atau &quot;sawer&quot; melalui platform dukungan kreator favorit Anda.</p> {/* <--- PERBAIKAN: "traktir" dan "sawer" */}
+            <p className="text-gray-300 mb-6">Dukung kami dengan &quot;traktir&quot; atau &quot;sawer&quot; melalui platform dukungan kreator favorit Anda.</p>
             <Link
               href="https://saweria.co/kawaragifans" // Ganti dengan link Saweria/Trakteer kamu
               target="_blank"
@@ -108,9 +109,11 @@ export default function DonatePage() {
           <h2 className="text-3xl font-bold text-white mb-6 text-center">FAQ Donasi</h2>
           <div className="prose prose-invert text-gray-300">
             <h3>Untuk apa donasi ini digunakan?</h3>
-            <p>Donasi akan digunakan untuk biaya operasional website (hosting, domain), pengembangan konten baru, event komunitas, dan mendukung kegiatan promosi terkait Soya Kurokawa &amp; Hinata Hiiragi.</p> {/* <--- PERBAIKAN: &amp; */}
+            <p>Donasi akan digunakan untuk biaya operasional website (hosting, domain), pengembangan konten baru, event komunitas, dan mendukung kegiatan promosi terkait Soya Kurokawa &amp; Hinata Hiiragi.</p>
+
             <h3>Apakah donasi ini wajib?</h3>
             <p>Tentu tidak. Donasi adalah sukarela. Kehadiran dan partisipasi Anda di komunitas sudah merupakan dukungan yang sangat berharga bagi kami.</p>
+
             <h3>Bagaimana saya bisa melihat laporan penggunaan donasi?</h3>
             <p>Kami berkomitmen untuk transparansi. Laporan singkat penggunaan donasi akan kami publikasikan secara berkala di halaman ini atau melalui newsletter kami.</p>
           </div>
