@@ -7,11 +7,7 @@ import { useAuth } from "../lib/firebase/authContext";
 import Link from "next/link";
 import Image from "next/image";
 
-// HAPUS ATAU KOMENTARI BAGIAN METADATA INI
-// export const metadata = {
-//   title: 'Login - Kawaragi Fansbase',
-//   description: 'Login untuk mengakses konten eksklusif dan fitur admin.',
-// };
+
 
 export default function LoginPage() {
   const { user, loading, signInWithGoogle } = useAuth();
