@@ -1,7 +1,14 @@
+// tsconfig.json (jika Anda pakai TypeScript)
+// atau jsconfig.json (jika Anda pakai JavaScript)
+
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/lib/*": ["./app/lib/*"], // <--- TAMBAHKAN ATAU PERBARUI BARIS INI
+      "@/components/*": ["./app/components/*"], // Bisa juga tambahkan ini untuk komponen umum
+      "@/*": ["./*"] // Contoh alias root
     }
+    // ... konfigurasi lainnya
   }
 }
