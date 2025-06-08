@@ -7,11 +7,11 @@ import { useAuth } from "../lib/firebase/authContext";
 import Link from "next/link";
 import Image from "next/image";
 
-export const metadata = {
-  // Metadata ini di Server Component, tapi page ini client, jadi bisa diabaikan
-  title: "Login - Kawaragi Fansbase",
-  description: "Login untuk mengakses konten eksklusif dan fitur admin.",
-};
+// HAPUS ATAU KOMENTARI BAGIAN METADATA INI
+// export const metadata = {
+//   title: 'Login - Kawaragi Fansbase',
+//   description: 'Login untuk mengakses konten eksklusif dan fitur admin.',
+// };
 
 export default function LoginPage() {
   const { user, loading, signInWithGoogle } = useAuth();
@@ -20,8 +20,6 @@ export default function LoginPage() {
   // Redirect jika user sudah login
   useEffect(() => {
     if (!loading && user) {
-      // Jika user sudah login, arahkan ke homepage atau halaman admin jika admin
-      // Ini bisa lebih canggih jika kamu menyimpan halaman sebelumnya
       router.push("/");
     }
   }, [user, loading, router]);
@@ -39,13 +37,7 @@ export default function LoginPage() {
     return (
       <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center px-4">
         <div className="bg-gray-900 p-10 rounded-xl shadow-2xl border border-gray-800 text-center max-w-md w-full">
-          <Image
-            src="/kawaragi-logo.png" // Ganti dengan path logo kamu
-            alt="Kawaragi Fansbase Logo"
-            width={80}
-            height={80}
-            className="mx-auto mb-6"
-          />
+          <Image src="/kawaragi-logo.png" alt="Kawaragi Fansbase Logo" width={80} height={80} className="mx-auto mb-6" />
           <h1 className="text-4xl font-bold text-white mb-4">Login ke Kawaragi Fansbase</h1>
           <p className="text-gray-300 text-lg mb-8">Masuk untuk membuka akses penuh ke konten eksklusif dan fitur komunitas.</p>
 
@@ -68,6 +60,5 @@ export default function LoginPage() {
     );
   }
 
-  // Jika user sudah login (dan redirected oleh useEffect)
   return null;
 }
